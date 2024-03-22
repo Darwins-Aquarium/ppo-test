@@ -44,7 +44,7 @@ std::vector<int> Game::get_actions() const {
     return result;
 }
 
-int Game::perform_action(const int action) {
+int Game::perform_action(int action) {
     switch (action) {
         case move_up:
             player_pos.first--;

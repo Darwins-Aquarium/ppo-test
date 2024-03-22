@@ -14,10 +14,10 @@ private:
     const int player_token = 1;
     const int target_token = 2;
     const int empty = 0;
-    const int move_down = 0;
-    const int move_up = 0;
-    const int move_left = 0;
-    const int move_right = 0;
+    static constexpr int move_down = 0;
+    static constexpr int move_up = 1;
+    static constexpr int move_left = 2;
+    static constexpr int move_right = 3;
 
     std::pair<int,int> player_pos; // (y, x)
     std::pair<int,int> target_pos; // (y, x)
