@@ -27,6 +27,8 @@ public:
     [[nodiscard]] std::vector<int> get_actions() const;
     int perform_action(int action);
     [[nodiscard]] std::vector<int> get_observations() const;
+    static constexpr int num_actions = 4;
+    static constexpr int num_obs = 2;
 };
 
 
