@@ -32,6 +32,7 @@ BatchResult PPO::rollout() {
             // calculate action and log prob
             auto mean = this->actor->forward(
                 torch::from_blob(obs.data(), {1, obs.size()}, torch::TensorOptions().dtype(torch::kInt32)));
+
         }
     }
 

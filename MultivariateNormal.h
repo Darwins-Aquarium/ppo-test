@@ -6,14 +6,13 @@
 #define MULTIVARIATENORMAL_H
 #include "torch/torch.h"
 
-
-
 class MultivariateNormal {
 private:
     torch::Tensor mean;
     torch::Tensor cov_mat;
+    int dim;
 public:
-    MultivariateNormal(const torch::Tensor& mean, const torch::Tensor& cov_mat);
+    MultivariateNormal(torch::Tensor  mean, torch::Tensor  cov_mat, int dim);
     torch::Tensor sample();
 
 };
