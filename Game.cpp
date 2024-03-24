@@ -72,7 +72,7 @@ int Game::perform_action(int action) {
 
 }
 
-std::vector<int> Game::get_observations() const {
+std::vector<int> Game::get_observation() const {
     std::vector<int> result;
     result.push_back(target_pos.first - player_pos.first);
     result.push_back(target_pos.second - player_pos.second);

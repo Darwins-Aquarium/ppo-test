@@ -11,6 +11,8 @@ add_executable(ppo_test main.cpp
         Network.h
         PPO.cpp
         PPO.h
-        PPO.cpp)
+        PPO.cpp
+        MultivariateNormal.cpp
+        MultivariateNormal.h)
 target_link_libraries(ppo_test "${TORCH_LIBRARIES}")
 set_property(TARGET ppo_test PROPERTY CXX_STANDARD 17)

@@ -7,7 +7,7 @@
 torch::Tensor Network::forward(const torch::Tensor& observation) {
     auto x = torch::relu(fc1->forward(observation));
     x = torch::dropout(x, 0.5, is_training());
-    x = torch::log_softmax(fc2->forward(x), 1);
+    x = fc2->forward(x);
     return x;
 }
 
