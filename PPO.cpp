@@ -5,6 +5,8 @@
 
 #include "PPO.h"
 
+#include "MultivariateNormal.h"
+
 
 PPO::PPO(PPOParams params) {
     this->game = std::make_unique<Game>(Game());
@@ -32,6 +34,7 @@ BatchResult PPO::rollout() {
             // calculate action and log prob
             auto mean = this->actor->forward(
                 torch::from_blob(obs.data(), {1, obs.size()}, torch::TensorOptions().dtype(torch::kInt32)));
+            auto dist = MultivariateNormal(mean, this->cov_mat, mean.sizes()[0]);
 
         }
     }

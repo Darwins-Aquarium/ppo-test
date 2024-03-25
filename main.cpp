@@ -1,14 +1,13 @@
 #include <iostream>
 
+#include "MultivariateNormal.h"
 #include "Network.h"
 
 int main() {
-    auto net = std::make_unique<Network>(Network(2, 4));
-    auto observation = torch::ones({1, 2});
-    auto res = net->forward(observation);
-    for(int i=0; i<4; i++) {
-        std::cout << res[0][i] << std::endl;
-    }
+    torch::Tensor mu = torch::tensor({{1.0, 2.0}});
+    torch::Tensor cov = torch::tensor({{2.0, 1.0}, {1.0, 2.0}});
+
+    std::cout << MultivariateNormal(mu, cov, 2).sample() << std::endl;
 
     return 0;
 }
